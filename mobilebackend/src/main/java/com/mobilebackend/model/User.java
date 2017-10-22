@@ -3,6 +3,7 @@ package com.mobilebackend.model;
 public class User {
 
 	private String userName;
+	
 	private String password;
 
 	public String getUserName() {

@@ -3,6 +3,7 @@ package com.mobilebackend.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,11 +15,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.mobilebackend.model.Car;
 import com.mobilebackend.model.CarList;
 import com.mobilebackend.model.User;
+import com.mobilebackend.service.CarService;
 
 @Controller
 @RequestMapping("/param/")
 public class RestParam {
-
+	@Autowired
+	CarService carService;
 	/*
 	 * http://localhost:8080/Spring4MVCHelloWorldNoXMLDemo/param/method7/KhanhToan
 	 */
@@ -92,37 +95,10 @@ public class RestParam {
 		
 	}
 	
-	@RequestMapping(value="car-list-02")
+	@RequestMapping(value="car-list-02",method=RequestMethod.GET)
 	@ResponseBody
 	public CarList carList02(){
-		List<Car> list=new ArrayList<Car>();
-		Car car1=new Car();
-		car1.setBrand("BMW");
-		car1.setDate("10-29-2018");
-		car1.setName("320i");
-		car1.setWeight(2.0);
-		
-		Car car2=new Car();
-		car2.setBrand("Wave RSX");
-		car2.setDate("10-29-2018");
-		car2.setName("320i");
-		car2.setWeight(4.0);
-		
-		Car car3=new Car();
-		car3.setBrand("Wave alpha");
-		car3.setDate("10-29-2018");
-		car3.setName("320i");
-		car3.setWeight(3.0);
-		
-		list.add(car1);
-		list.add(car2);
-		list.add(car3);
-		
-		CarList cl = new CarList();
-		cl.setDanhsachxe(list);
-		cl.setSoLuongXe(3);
-		return cl;
-		
+		return carService.findAll();
 	}
 	
 	@RequestMapping(value="method-10", method = RequestMethod.POST)
