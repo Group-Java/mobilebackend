@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cthoadon` (
-  `macthoadon` int(11) NOT NULL,
+  `macthoadon` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mahoadon` int(11) NOT NULL,
   `imei_may` varchar(50) UNIQUE NOT NULL,
   `gia` int(11) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `cthoadon` (
 --
 
 CREATE TABLE `ctphieudat` (
-  `mactphieudat` int(11) NOT NULL,
+  `mactphieudat` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `maphieudat` int(11) NOT NULL,
   `masanphamtuychon` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
@@ -64,8 +64,8 @@ CREATE TABLE `ctphieudat` (
 --
 
 CREATE TABLE `hoadon` (
-  `mahoadon` int(11) NOT NULL,
-  `manhanvienlap` varchar(50) NOT NULL,
+  `mahoadon` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  `user_nhanvienlap` varchar(50) NOT NULL,
   `ngaylap` date NOT NULL,
   `user_khachhang` varchar(50) NOT NULL,
   `ngaykichhoat` date DEFAULT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `hoadon` (
 --
 
 CREATE TABLE `ketnoi` (
-  `maketnoi` varchar(20) NOT NULL,
+  `maketnoi` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `wlan` varchar(40) DEFAULT NULL,
   `bluetooth` varchar(20) DEFAULT NULL,
   `gps` varchar(40) DEFAULT NULL
@@ -99,7 +99,7 @@ CREATE TABLE `ketnoi` (
 --
 
 CREATE TABLE `kho` (
-  `imei_may` varchar(50) NOT NULL,
+  `imei_may` varchar(50) NOT NULL PRIMARY KEY,
   `masanphamtuychon` int(11) NOT NULL,
   `trangthaiban` bit(1) NOT NULL,
   `trangthaikichhoat` bit(1) NOT NULL
@@ -113,11 +113,11 @@ CREATE TABLE `kho` (
 --
 
 CREATE TABLE `phieuchi` (
-  `maphieuchi` int(11) NOT NULL,
+  `maphieuchi` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `maphieunhap` int(11) NOT NULL,
   `gia` int(11) NOT NULL,
   `ngaylap` date NOT NULL,
-  `nhanvienlap` varchar(50) NOT NULL,
+  `user_nhanvienlap` varchar(50) NOT NULL,
   `trangthai` bit(1) NOT NULL,
   `locked` bit(1) NOT NULL
 ) ENGINE=InnoDB;
@@ -129,14 +129,13 @@ CREATE TABLE `phieuchi` (
 --
 
 CREATE TABLE `phieudat` (
-  `maphieudat` int(11) NOT NULL,
+  `maphieudat` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `user_khachhang` varchar(50) NOT NULL,
   `ngaylap` date NOT NULL,
   `trangthai` bit(1) NOT NULL,
   `locked` bit(1) NOT NULL,
   `ghichu` text NOT NULL,
-  `tonggia` double NOT NULL,
-   primary key(maphieudat)
+  `tonggia` double NOT NULL
 ) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
@@ -146,11 +145,11 @@ CREATE TABLE `phieudat` (
 --
 
 CREATE TABLE `phieunhap` (
-  `maphieunhap` int(11) NOT NULL,
+  `maphieunhap` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `imei_may` varchar(50) NOT NULL,
   `masanphamtuychon` int(11) NOT NULL,
   `ngaylap` date NOT NULL,
-  `nhanvienlap` varchar(50) NOT NULL,
+  `user_nhanvienlap` varchar(50) NOT NULL,
   `gia` int(11) NOT NULL,
   `xacnhan` bit(1) NOT NULL,
   `locked` bit(1) NOT NULL DEFAULT b'0'
@@ -163,9 +162,9 @@ CREATE TABLE `phieunhap` (
 --
 
 CREATE TABLE `phieuthu` (
-  `maphieuthu` int(11) NOT NULL,
+  `maphieuthu` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `mahoadon` int(11) NOT NULL,
-  `manhanvienlap` varchar(30) NOT NULL,
+  `user_nhanvienlap` varchar(50) NOT NULL,
   `ngaylap` date NOT NULL,
   `imei_may` varchar(50) NOT NULL,
   `gia` int(11) NOT NULL,
@@ -181,9 +180,9 @@ CREATE TABLE `phieuthu` (
 --
 
 CREATE TABLE `phieuxuat` (
-  `maphieuxuat` int(11) NOT NULL,
+  `maphieuxuat` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `mahoadon` int(11) NOT NULL,
-  `manguoilap` varchar(50) NOT NULL,
+  `user_nguoilap` varchar(50) NOT NULL,
   `ngaylap` date NOT NULL,
   `imei_may` varchar(50) NOT NULL,
   `locked` bit(1) NOT NULL DEFAULT b'0',
@@ -197,20 +196,20 @@ CREATE TABLE `phieuxuat` (
 --
 
 CREATE TABLE `sanpham` (
-  `masp` varchar(20) NOT NULL,
+  `masp` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   `tensp` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `kichthuocman` varchar(20) DEFAULT NULL,
   `thongsoman` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `pin` varchar(20) DEFAULT NULL,
-  `macameratruoc` varchar(10) DEFAULT NULL,
-  `macamerasau` varchar(10) DEFAULT NULL,
+  `macameratruoc` int(11) DEFAULT NULL,
+  `macamerasau` int(11) DEFAULT NULL,
   `kichthuoc` varchar(20) DEFAULT NULL,
   `khoiluong` varchar(10) DEFAULT NULL,
   `thoidiemramat` varchar(10) DEFAULT NULL,
   `chipset` varchar(20) DEFAULT NULL,
   `tscpu` varchar(10) DEFAULT NULL,
   `bonhoram` varchar(10) DEFAULT NULL,
-  `ketnoi` varchar(10) DEFAULT NULL,
+  `ketnoi` int(11) DEFAULT NULL,
   `hedieuhanh` varchar(10) DEFAULT NULL,
   `baomatvantay` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `chongnuoc` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
@@ -226,9 +225,9 @@ CREATE TABLE `sanpham` (
 --
 
 CREATE TABLE `sanpham_tuychon` (
-  `ma_sp` varchar(20) NOT NULL,
-  `ma_tuy_chon` varchar(20) NOT NULL,
-  `masanphamtuychon` int(11) NOT NULL,
+  `masanphamtuychon` int(11) NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  `ma_sp` int(11) NOT NULL,
+  `ma_tuy_chon` int(11) NOT NULL,
   `soluong` double DEFAULT NULL,
   `giasanpham` double DEFAULT NULL
 ) ENGINE=InnoDB;
@@ -240,7 +239,7 @@ CREATE TABLE `sanpham_tuychon` (
 --
 
 CREATE TABLE `taikhoan` (
-  `mataikhoan` int(11) NOT NULL,
+  `mataikhoan` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `username` varchar(50) unique NOT NULL,
   `password` text NOT NULL,
   `hovaten` varchar(100) NOT NULL,
@@ -259,8 +258,8 @@ CREATE TABLE `taikhoan` (
 --
 
 CREATE TABLE `thongsocamera` (
-  `macamera` varchar(10) NOT NULL,
-  `diemanh` int(11) DEFAULT NULL,
+  `macamera` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `diemanh` varchar(11) DEFAULT NULL,
   `thongsocoban` varchar(100) DEFAULT NULL,
   `dacdiem` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB;
@@ -271,100 +270,11 @@ CREATE TABLE `thongsocamera` (
 --
 
 CREATE TABLE `tuychon` (
-  `matuychon` varchar(20) NOT NULL,
+  `matuychon` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mausac` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `bonhotrong` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cthoadon`
---
-ALTER TABLE `cthoadon`
-  ADD PRIMARY KEY (`macthoadon`);
-
---
--- Indexes for table `ctphieudat`
---
-ALTER TABLE `ctphieudat`
-  ADD PRIMARY KEY (`mactphieudat`);
-
-
--- Indexes for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`mahoadon`);
-
---
--- Indexes for table `ketnoi`
---
-ALTER TABLE `ketnoi`
-  ADD PRIMARY KEY (`maketnoi`);
-
---
--- Indexes for table `kho`
---
-ALTER TABLE `kho`
-  ADD PRIMARY KEY (`imei_may`);
-
-
---
--- Indexes for table `phieuchi`
---
-ALTER TABLE `phieuchi`
-  ADD PRIMARY KEY (`maphieuchi`);
-
---
--- Indexes for table `phieunhap`
---
-ALTER TABLE `phieunhap`
-  ADD PRIMARY KEY (`maphieunhap`);
-
---
--- Indexes for table `phieuthu`
---
-ALTER TABLE `phieuthu`
-  ADD PRIMARY KEY (`maphieuthu`);
-
---
--- Indexes for table `phieuxuat`
---
-ALTER TABLE `phieuxuat`
-  ADD PRIMARY KEY (`maphieuxuat`);
-
---
--- Indexes for table `sanpham`
---
-ALTER TABLE `sanpham`
-  ADD PRIMARY KEY (`masp`);
-
---
--- Indexes for table `sanpham_tuychon`
---
-ALTER TABLE `sanpham_tuychon`
-  ADD PRIMARY KEY (`ma_sp`,`ma_tuy_chon`);
-
---
--- Indexes for table `taikhoan`
---
-ALTER TABLE `taikhoan`
-  ADD PRIMARY KEY (`mataikhoan`);
-
---
--- Indexes for table `thongsocamera`
---
-ALTER TABLE `thongsocamera`
-  ADD PRIMARY KEY (`macamera`);
-
---
--- Indexes for table `tuychon`
---
-ALTER TABLE `tuychon`
-  ADD PRIMARY KEY (`matuychon`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -412,7 +322,7 @@ references tuychon(matuychon);
 
 
 alter table hoadon
-add constraint fk_hoadon_nhanvien foreign key(manhanvienlap)
+add constraint fk_hoadon_nhanvien foreign key(user_nhanvienlap)
 references taikhoan(username);
 
 alter table hoadon
@@ -454,7 +364,7 @@ references sanpham_tuychon(masanphamtuychon);
 
 
 alter table phieuthu
-add constraint fk_phieuthu_taikhoan foreign key(manhanvienlap)
+add constraint fk_phieuthu_taikhoan foreign key(user_nhanvienlap)
 references taikhoan(username);
 
 alter table phieuthu
@@ -469,7 +379,7 @@ references kho(imei_may);
 
 
 alter table phieuxuat
-add constraint fk_phieuxuat_taikhoan foreign key(manguoilap)
+add constraint fk_phieuxuat_taikhoan foreign key(user_nguoilap)
 references taikhoan(username);
 
 alter table phieuxuat
@@ -502,7 +412,7 @@ references sanpham_tuychon(masanphamtuychon);
 
 
 alter table phieunhap
-add constraint fk_phieunhap_taikhoan foreign key(nhanvienlap)
+add constraint fk_phieunhap_taikhoan foreign key(user_nhanvienlap)
 references taikhoan(username);
 
 
@@ -513,7 +423,5 @@ add constraint fk_phieuchi_phieunhap foreign key(maphieunhap)
 references phieunhap(maphieunhap);
 
 alter table phieuchi
-add constraint fk_phieuchi_taikhoan foreign key(nhanvienlap)
+add constraint fk_phieuchi_taikhoan foreign key(user_nhanvienlap)
 references taikhoan(username);
-
-
