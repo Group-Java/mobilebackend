@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/admin/")
 public class Test {
  
-  @RequestMapping(value = "abc", method = RequestMethod.GET)
+  @RequestMapping(value = "dashboard1", method = RequestMethod.GET)
   public String test(ModelMap model) {
-    model.addAttribute("greeting", "dinhtruong");
-    return "admin/welcome";
+      model.addAttribute("greeting", "dinhtruong");
+	  model.addAttribute("content", "dashboard/index");
+    return "admin/dashboard/index";
   }
 }
