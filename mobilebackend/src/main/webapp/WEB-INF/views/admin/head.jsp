@@ -24,3 +24,15 @@
 
     <!-- Custom Theme Style -->
     <link href="<c:url value='/assets/admin/build/css/custom.min.css' />" rel="stylesheet">
+    
+
+    <!-- NProgress -->
+    <link href="<c:url value='/assets/admin/vendors/nprogress/nprogress.css' />" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="<c:url value='/assets/admin/vendors/iCheck/skins/flat/green.css' />" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="<c:url value='/assets/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css' />" rel="stylesheet">
+    <link href="<c:url value='/assets/admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css' />" rel="stylesheet">
+    <link href="<c:url value='/assets/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css' />" rel="stylesheet">
+    <link href="<c:url value='/assets/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css' />" rel="stylesheet">
+    <link href="<c:url value='/assets/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css' />" rel="stylesheet">
