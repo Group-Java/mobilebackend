@@ -22,10 +22,9 @@
     <!-- bootstrap-daterangepicker -->
     <link href="<c:url value='/assets/admin/vendors/bootstrap-daterangepicker/daterangepicker.css' />" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
-    <link href="<c:url value='/assets/admin/build/css/custom.min.css' />" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="<c:url value='/assets/admin/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css' />" rel="stylesheet">
     
-
     <!-- NProgress -->
     <link href="<c:url value='/assets/admin/vendors/nprogress/nprogress.css' />" rel="stylesheet">
     <!-- iCheck -->
@@ -36,3 +35,7 @@
     <link href="<c:url value='/assets/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css' />" rel="stylesheet">
     <link href="<c:url value='/assets/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css' />" rel="stylesheet">
     <link href="<c:url value='/assets/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css' />" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="<c:url value='/assets/admin/build/css/custom.min.css' />" rel="stylesheet">
+    

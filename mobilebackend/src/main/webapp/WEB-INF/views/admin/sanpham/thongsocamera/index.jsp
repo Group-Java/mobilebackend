@@ -49,10 +49,10 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Mã kết nối</th>
-                          <th>Wlan</th>
-                          <th>Bluetooth</th>
-                          <th>GPS</th>
+                          <th>Mã Camera</th>
+                          <th>Điểm mạnh</th>
+                          <th>Thông số cơ bạn</th>
+                          <th>Đặc điểm</th>
                           <th>Công cụ</th>
                         </tr>
                       </thead>

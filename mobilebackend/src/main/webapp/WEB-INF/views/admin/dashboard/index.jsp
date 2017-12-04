@@ -17,9 +17,7 @@
       	
       	<!-- page content -->
       	<div class="right_col" role="main">
-      		<div class="">
-      			<jsp:include page="page_title.jsp"></jsp:include>
-      		</div>
+      		
       		
       		${greeting }
 			

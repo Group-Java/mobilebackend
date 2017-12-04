@@ -16,7 +16,8 @@
       	<jsp:include page="/WEB-INF/views/admin/navigation.jsp"></jsp:include>
       	
       	<!-- page content -->
-      	<div class="right_col" role="main">
+      	<div class="right_col" role="main">\
+      	{ $ten }
       		<div class="">
       			<jsp:include page="/WEB-INF/views/admin/page_title.jsp"></jsp:include>
       		</div>
@@ -24,7 +25,7 @@
       		<div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Danh sách kết nối<small></small></h2>
+                    <h2>Danh sách sản phẩm<small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -44,15 +45,15 @@
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
-                      <button class="btn btn-success">Thêm kết nối</button>
+                      <button class="btn btn-success">Thêm Sản phẩm</button>
                     </p>
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Mã kết nối</th>
-                          <th>Wlan</th>
-                          <th>Bluetooth</th>
-                          <th>GPS</th>
+                          <th>Mã sản phẩm</th>
+                          <th>Tên sản phẩm</th>
+                          <th>Thời điểm ra mắt</th>
+                          <th>Dòng sản phẩm</th>
                           <th>Công cụ</th>
                         </tr>
                       </thead>

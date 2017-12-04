@@ -49,10 +49,9 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Mã kết nối</th>
-                          <th>Wlan</th>
-                          <th>Bluetooth</th>
-                          <th>GPS</th>
+                          <th>Mã tùy chọn</th>
+                          <th>Màu sắc</th>
+                          <th>Bộ nhớ trong</th>
                           <th>Công cụ</th>
                         </tr>
                       </thead>
@@ -62,7 +61,6 @@
                         <tr>
                           <td>Tiger Nixon</td>
                           <td>System Architect</td>
-                          <td>Edinburgh</td>
                           <td>61</td>
                           <td><a href="#"><i class="fa fa-edit text-center">  Sửa  </i></a>   <a href="#"><i class="fa fa-trash fa-hover">  Xóa  </i></a></td>
                         </tr>

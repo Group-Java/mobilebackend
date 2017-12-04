@@ -30,9 +30,9 @@
     <script src="<c:url value='/assets/admin/vendors/moment/min/moment.min.js' />"></script>
     <script src="<c:url value='/assets/admin/vendors/bootstrap-daterangepicker/daterangepicker.js' />"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="<c:url value='/assets/admin//build/js/custom.min.js' />"></script>
     
+    
+    <script src="<c:url value='/assets/admin/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js' />"></script>
 
     <!-- FastClick -->
     <script src="<c:url value='/assets/admin/vendors/fastclick/lib/fastclick.js' />"></script>
@@ -40,6 +40,7 @@
     <script src="<c:url value='/assets/admin/vendors/nprogress/nprogress.js' />"></script>
     <!-- iCheck -->
     <script src="<c:url value='/assets/admin/vendors/iCheck/icheck.min.js' />"></script>
+    <script src="<c:url value='/assets/admin/vendors/validator/validator.js' />"></script>
     <!-- Datatables -->
     <script src="<c:url value='/assets/admin/vendors/datatables.net/js/jquery.dataTables.min.js' />"></script>
     <script src="<c:url value='/assets/admin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js' />"></script>
@@ -56,3 +57,12 @@
     <script src="<c:url value='/assets/admin/vendors/jszip/dist/jszip.min.js' />"></script>
     <script src="<c:url value='/assets/admin/vendors/pdfmake/build/pdfmake.min.js' />"></script>
     <script src="<c:url value='/assets/admin/vendors/pdfmake/build/vfs_fonts.js' />"></script>
+	
+	<!-- Custom Theme Scripts -->
+	<script src="<c:url value='/assets/admin//build/js/custom.min.js' />"></script>
+	
+	<script>
+	 $('#myDatepicker2').datetimepicker({
+	        format: 'YYYY-MM-DD'
+	    });
+	</script>
